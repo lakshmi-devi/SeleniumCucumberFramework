@@ -13,11 +13,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
+
 import driverfactory.DriverFactory;
 import driverfactory.ManufactonUrlPageFactory;
 import pages.LoginPage;
 
-public class LoginStepDefinitions {
+public class LoginStepDefn {
 
     private WebDriver driver;
     private LoginPage loginPage;
@@ -37,10 +38,10 @@ public class LoginStepDefinitions {
 	@SuppressWarnings("deprecation")
 	@Given("I am on the Manufacton login page")
     public void i_am_on_the_Manufacton_login_page() throws InterruptedException {	 
-        driver.get(ManufactonUrlPageFactory.getInstance().getValue("loginPage"));
-//		driver.get("https://stage.manufacton.com/#/login");
+//        driver.get(ManufactonUrlPageFactory.getInstance().getValue("loginPage"));
+		driver.get("https://stage.manufacton.com/#/login");
+       Thread.sleep(2000);
         loginPage = new LoginPage(driver);
-        Thread.sleep(5000);
     }
 
     @Given("I have entered a valid username and password")
@@ -58,12 +59,11 @@ public class LoginStepDefinitions {
     @When("I click on the login button")
     public void i_click_on_the_login_button() throws InterruptedException {
         loginPage.clickLoginButton();
-        Thread.sleep(3000);
+      Thread.sleep(2000);
     }
 
     @Then("I should be logged in successfully")
-    public void i_should_be_logged_in_successfully() throws InterruptedException {
-    	Thread.sleep(3000);
+    public void i_should_be_logged_in_successfully() {
        Assert.assertEquals(loginPage.checkLogoutLink(), true);
     }
 

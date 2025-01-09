@@ -13,7 +13,7 @@ import io.cucumber.junit.CucumberOptions;
 	@CucumberOptions(
 			features = { "src/main/java/resources/features/login.feature" },
 			        glue = {"com.stepdefinations"},
-			plugin = {"pretty"
+			plugin = {"pretty", 
 			}
 			
 			)

@@ -9,13 +9,19 @@ import org.testng.Assert;
 
 import driverfactory.ManufactonUrlPageFactory;
 import pages.LoginPage;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 
 public class Login {
 
 	private static LoginPage loginPage;
+	private static Logger log;
 
 	public static void loginManufacton(WebDriver driver) {
-
+		
+			log = LogManager.getLogger("/practice/src/test/java/com/common/Login.java");
+		
 		driver.manage().window().maximize();
 		String url = getFullURL("loginPage");
 		driver.get(url);
@@ -26,10 +32,12 @@ public class Login {
 		loginPage.enterPassword("Bru!ns202!");
 
 		loginPage.clickLoginButton();
+		log.info("login successful");
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1000));
 
 		Assert.assertEquals(loginPage.checkLogoutLink(), true);
+		log.info("assertion passed");
 
 	}
 

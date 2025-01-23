@@ -11,11 +11,10 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 	@CucumberOptions(
-			features = { "src/main/java/resources/features/login.feature" },
+			features = { "C:\\Users\\ACCESS\\git\\seleniumPracticeProject\\practice\\src\\test\\java\\features\\login.feature" },
 			        glue = {"com.stepdefinations"},
-			plugin = {"pretty", 
+			plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "json:target/cucumber.json"
 			}
-			
 			)
 	public class MyTestRunner {
 

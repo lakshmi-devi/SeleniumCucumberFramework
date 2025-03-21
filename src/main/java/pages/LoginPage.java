@@ -19,7 +19,7 @@ public class LoginPage {
     private By emailInputLocator = By.xpath("//input[@type='email']");
     private By passwordInputLocator = By.xpath("//input[@type='password']");
     private By loginButtonLocator = By.xpath("//button[@class=\"button is-dark is-capitalized has-text-weight-bold\"]");
-    private By logoutLinkLocator = By.xpath("//i[@class=\"icon-loginlogout is-size-1\"]");
+    private By logoutLocator = By.xpath("//i[@class=\"icon-loginlogout is-size-1\"]");
 //    private By invalidLoginTostMessage = By.xpath("//div[text()=\"Cannot log in with this user name and password\"]");
 
 

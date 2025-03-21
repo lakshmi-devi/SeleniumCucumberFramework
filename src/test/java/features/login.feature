@@ -6,7 +6,7 @@ Feature: Login Functionality for Manufacton Website
   So that I can access my account-related features and manage my orders
 
   Background: 
-    Given I am on the Manufacton login page
+    Given I am on the manufacton login page
 
   Scenario: Successful login with valid credentials
     Given I have entered a valid username and password
